@@ -1,16 +1,57 @@
-# cli
-To make environment variable management and synchronization effortless across Linux servers and environments, with a single command.
+# Install `tinymancer-cli` app
+
+**Run:**
+
+```shell
+curl -s https://raw.githubusercontent.com/tinymancer/cli/main/install.sh | bash
+```
+
+**Output:**
+
+```text
+[⇩] Downloading tinymancer-linux-amd64.zip...
+[⇩] Downloading checksums...
+[🔐] Verifying checksum...
+[📦] Extracting...
+[⚙] Installing to /usr/local/bin...
+[✅] Installed: /usr/local/bin/tinymancer
+tinymancer v0.1.0
+```
 
 ---
 
-## Roadmap
+# Uninstall `tinymancer-cli` app
 
-- [ ] Simple `tinymancer pull` command to fetch and apply `.env`
-- [ ] Install script via `curl | bash`
-- [ ] Support for systemd service auto-restarts after update
-- [ ] Ability to target specific env sets (by name/project)
-- [ ] Optional: encrypt local cache of variables
-- [ ] CLI autocompletion (bash/zsh)
-- [ ] Logging and dry-run mode
-- [ ] Test coverage for CLI behavior
+**Run:**
 
+```shell
+tinymancer uninstall
+```
+
+**Output:**
+
+```text
+[⚠️] Removing binary at /usr/local/bin/tinymancer...
+[!] Retrying with sudo...
+[✅] tinymancer has been uninstalled successfully.
+```
+
+---
+
+# How to run dev environment 
+
+
+```shell
+go mod tidy
+```
+
+```shell
+go build -o tinymancer
+```
+
+
+```shell
+./tinymancer
+./tinymancer --version
+./tinymancer uninstall
+```
